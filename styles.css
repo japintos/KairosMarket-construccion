@@ -135,9 +135,41 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Navegación del header */
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.nav-link:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--primary-orange);
+    outline-offset: 2px;
 }
 
 /* Contenido principal - Optimizado para SEO */
@@ -438,6 +470,21 @@ body {
         width: 35px;
         height: 35px;
     }
+    
+    /* Optimización de performance en móviles */
+    .leaf, .flower {
+        animation: none;
+        opacity: 0.05;
+    }
+    
+    .floating-particle {
+        display: none;
+    }
+    
+    .backdrop-filter {
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.95);
+    }
 }
 
 @media (max-width: 480px) {
@@ -469,6 +516,22 @@ body {
         width: 30px;
         height: 30px;
     }
+    
+    /* Navegación responsive */
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-nav {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 /* Accesibilidad */
@@ -495,5 +558,81 @@ body {
         --primary-orange: #CC5500;
         --text-dark: #000000;
         --text-light: #333333;
+    }
+}
+
+
+/* Progress Details */
+.progress-details {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(76, 88, 60, 0.05);
+    border-radius: 8px;
+}
+
+.progress-item-name {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.progress-item-percentage {
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+
+/* Seo Content mejorado */
+.seo-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.seo-text {
+    line-height: 1.8;
+}
+
+.seo-text p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* Mejoras de accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus visible mejorado */
+
+/* Animaciones suaves para nuevas secciones */
+.seo-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive para nuevas secciones */
+@media (max-width: 768px) {
+    .seo-content {
+        margin: 1rem;
+        padding: 1.5rem;
     }
 }

@@ -205,6 +205,46 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+
+
+    // Smooth scroll para navegación interna
+    function initSmoothScroll() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    // Mejorar accesibilidad con navegación por teclado
+    function enhanceKeyboardNavigation() {
+        const focusableElements = document.querySelectorAll(
+            'button, input, a, [tabindex]:not([tabindex="-1"])'
+        );
+        
+        focusableElements.forEach(element => {
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    if (this.tagName === 'BUTTON' || this.tagName === 'A') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                }
+            });
+        });
+    }
+
     // Inicializar todas las animaciones
     function initAnimations() {
         const shouldAnimate = checkReducedMotion();
@@ -214,10 +254,11 @@ document.addEventListener('DOMContentLoaded', function() {
             animateLogo();
             enhanceLogoHover();
             initParallaxEffect();
-            createFloatingParticles();
             
-            // Efecto de escritura (opcional, comentado por defecto)
-            // typeWriterEffect();
+            // Solo crear partículas en pantallas grandes
+            if (window.innerWidth > 768) {
+                createFloatingParticles();
+            }
             
             // Carga progresiva
             progressiveLoad();
@@ -246,9 +287,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar cuando el DOM esté listo
     initAnimations();
+    initSmoothScroll();
+    enhanceKeyboardNavigation();
     
     // Mensaje de consola para desarrolladores
-    console.log('🌿 Kairos Natural Market - Página en construcción');
+    console.log('🌿 KairosMarket - Kairos Natural Market - Página en construcción');
     console.log('✨ Animaciones suaves activadas');
     console.log('💻 Desarrollado por WebXpert - Julio Pintos');
     console.log('🌐 www.webxpert.com.ar');
