@@ -1,7 +1,7 @@
 {
-    "name": "Kairos Natural Market - Productos Naturales en Posadas",
-    "short_name": "Kairos Market",
-    "description": "Mercado saludable especializado en productos naturales, orgánicos y conscientes en Posadas, Misiones",
+    "name": "KairosMarket - Kairos Natural Market | Productos Naturales en Posadas",
+    "short_name": "KairosMarket",
+    "description": "KairosMarket - Kairos Natural Market es tu mercado saludable especializado en productos naturales, orgánicos y conscientes con kairosNatural en Posadas, Misiones",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#E5EEE5",

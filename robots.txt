@@ -1,5 +1,5 @@
-# Robots.txt para Kairos Natural Market - Posadas, Misiones
-# Optimizado para SEO local y productos naturales
+# Robots.txt para KairosMarket - Kairos Natural Market - Posadas, Misiones
+# Optimizado para SEO local y productos naturales con kairosNatural
 
 User-agent: *
 Allow: /
@@ -38,6 +38,6 @@ Crawl-delay: 1
 
 # Información adicional para motores de búsqueda
 # Sitio web: https://kairosmarket.com.ar
-# Empresa: Kairos Natural Market
+# Empresa: KairosMarket - Kairos Natural Market
 # Ubicación: Posadas, Misiones, Argentina
-# Especialidad: Productos naturales, orgánicos y conscientes
+# Especialidad: Productos naturales, orgánicos y conscientes con kairosNatural
